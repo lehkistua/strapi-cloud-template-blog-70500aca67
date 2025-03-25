@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "tags",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Категорія"
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Тег"
   },
   "options": {
     "draftAndPublish": true
@@ -23,12 +23,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::product.product",
-      "mappedBy": "categories"
-    },
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.seo"
+      "mappedBy": "tags"
     }
   }
 }

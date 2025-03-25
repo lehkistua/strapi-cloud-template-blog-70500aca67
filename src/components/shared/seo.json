@@ -1,12 +1,9 @@
 {
   "collectionName": "components_shared_seos",
   "info": {
-    "name": "Seo",
-    "icon": "allergies",
-    "displayName": "Seo",
-    "description": ""
+    "displayName": "SEO",
+    "description": "SEO-метадані для сторінок і товарів"
   },
-  "options": {},
   "attributes": {
     "metaTitle": {
       "type": "string",
@@ -16,11 +13,12 @@
       "type": "text",
       "required": true
     },
-    "shareImage": {
+    "metaKeywords": {
+      "type": "string"
+    },
+    "metaImage": {
       "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"]
+      "multiple": false
     }
   }
 }

@@ -1,0 +1,25 @@
+{
+    "collectionName": "components_product_variations",
+    "info": {
+      "displayName": "Варіація",
+      "description": "Варіація товару з власним зображенням і ціною"
+    },
+    "attributes": {
+      "name": {
+        "type": "string",
+        "required": true
+      },
+      "price": {
+        "type": "decimal",
+        "required": true
+      },
+      "image": {
+        "type": "media",
+        "multiple": false
+      },
+      "stock": {
+        "type": "integer",
+        "default": 0
+      }
+    }
+  }
