@@ -19,6 +19,15 @@
       "required": true,
       "unique": true
     },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.text",
+        "shared.image",
+        "shared.product-embed",
+        "shared.category-embed"
+      ]
+    },
     "seo": {
       "type": "component",
       "repeatable": false,

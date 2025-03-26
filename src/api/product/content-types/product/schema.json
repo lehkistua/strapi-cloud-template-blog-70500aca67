@@ -29,7 +29,8 @@
     },
     "images": {
       "type": "media",
-      "multiple": true
+      "multiple": true,
+      "required": false
     },
     "variations": {
       "type": "component",
@@ -65,6 +66,9 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "sku": {
+      "type": "uid"
     }
   }
 }
