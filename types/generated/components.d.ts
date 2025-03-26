@@ -1,5 +1,18 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface FaqItem extends Struct.ComponentSchema {
+  collectionName: 'components_faq_items';
+  info: {
+    description: '\u041E\u0434\u0438\u043D \u0432\u043E\u043F\u0440\u043E\u0441 \u0438 \u043E\u0442\u0432\u0435\u0442 \u0434\u043B\u044F FAQ';
+    displayName: 'FAQ Item';
+    icon: 'question';
+  };
+  attributes: {
+    answer: Schema.Attribute.RichText & Schema.Attribute.Required;
+    question: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ProductVariation extends Struct.ComponentSchema {
   collectionName: 'components_product_variations';
   info: {
@@ -14,6 +27,30 @@ export interface ProductVariation extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCategoryEmbed extends Struct.ComponentSchema {
+  collectionName: 'components_shared_category_embeds';
+  info: {
+    icon: 'folder';
+    name: 'Category Embed';
+  };
+  attributes: {
+    categoryId: Schema.Attribute.String & Schema.Attribute.Required;
+    categoryName: Schema.Attribute.String;
+  };
+}
+
+export interface SharedImage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_images';
+  info: {
+    icon: 'image';
+    name: 'Image';
+  };
+  attributes: {
+    altText: Schema.Attribute.String;
+    media: Schema.Attribute.Media & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -22,6 +59,18 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface SharedProductEmbed extends Struct.ComponentSchema {
+  collectionName: 'components_shared_product_embeds';
+  info: {
+    icon: 'shopping-bag';
+    name: 'Product Embed';
+  };
+  attributes: {
+    productId: Schema.Attribute.String & Schema.Attribute.Required;
+    productName: Schema.Attribute.String;
   };
 }
 
@@ -75,15 +124,31 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_texts';
+  info: {
+    icon: 'paragraph';
+    name: 'Text';
+  };
+  attributes: {
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'faq.item': FaqItem;
       'product.variation': ProductVariation;
+      'shared.category-embed': SharedCategoryEmbed;
+      'shared.image': SharedImage;
       'shared.media': SharedMedia;
+      'shared.product-embed': SharedProductEmbed;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.text': SharedText;
     }
   }
 }

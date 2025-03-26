@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_product_embeds",
+  "info": {
+    "name": "Product Embed",
+    "icon": "shopping-bag"
+  },
+  "attributes": {
+    "productId": {
+      "type": "string",
+      "required": true
+    },
+    "productName": {
+      "type": "string"
+    }
+  }
+}

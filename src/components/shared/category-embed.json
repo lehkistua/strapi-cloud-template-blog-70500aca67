@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_category_embeds",
+  "info": {
+    "name": "Category Embed",
+    "icon": "folder"
+  },
+  "attributes": {
+    "categoryId": {
+      "type": "string",
+      "required": true
+    },
+    "categoryName": {
+      "type": "string"
+    }
+  }
+}

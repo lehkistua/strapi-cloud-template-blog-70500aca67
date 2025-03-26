@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_images",
+  "info": {
+    "name": "Image",
+    "icon": "image"
+  },
+  "attributes": {
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "altText": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

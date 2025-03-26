@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_texts",
+  "info": {
+    "name": "Text",
+    "icon": "paragraph"
+  },
+  "attributes": {
+    "content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
