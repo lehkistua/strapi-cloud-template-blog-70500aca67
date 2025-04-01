@@ -1,21 +1,5 @@
 {
-  "kind": "collectionType",
-  "collectionName": "customers",
-  "info": {
-    "singularName": "customer",
-    "pluralName": "customers",
-    "displayName": "Customer",
-    "description": "Данные клиентов"
-  },
-  "options": {
-    "draftAndPublish": false
-  },
   "attributes": {
-    "user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
-    },
     "firstName": {
       "type": "string",
       "required": true

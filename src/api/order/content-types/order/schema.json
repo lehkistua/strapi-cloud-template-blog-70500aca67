@@ -11,14 +11,19 @@
     "draftAndPublish": false
   },
   "attributes": {
+    "orderNumber": {
+      "type": "string",
+      "unique": true
+    },
     "customer": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::customer.customer",
+      "target": "plugin::users-permissions.user",
       "inversedBy": "orders"
     },
     "products": {
-      "type": "json"
+      "type": "json",
+      "required": true
     },
     "total": {
       "type": "decimal",
@@ -28,6 +33,31 @@
       "type": "enumeration",
       "enum": ["pending", "paid", "shipped", "delivered", "cancelled"],
       "default": "pending"
+    },
+    "paymentMethod": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::payment-method.payment-method"
+    },
+    "shippingMethod": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shipping-method.shipping-method"
+    },
+    "shippingAddress": {
+      "type": "text",
+      "required": true
+    },
+    "paymentStatus": {
+      "type": "enumeration",
+      "enum": ["pending", "success", "failed"],
+      "default": "pending"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "estimatedDeliveryDate": {
+      "type": "date"
     },
     "createdAt": {
       "type": "datetime"
