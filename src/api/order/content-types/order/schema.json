@@ -4,26 +4,31 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "Order",
-    "description": "Заказы покупателей"
+    "displayName": "Order"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "attributes": {
-    "orderNumber": {
-      "type": "string",
-      "unique": true
-    },
-    "customer": {
+    "user": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "orders"
+      "target": "plugin::users-permissions.user"
     },
-    "products": {
-      "type": "json",
-      "required": true
+    "order_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-item.order-item"
+    },
+    "payment_method": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::payment-method.payment-method"
+    },
+    "shipping_method": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shipping-method.shipping-method"
     },
     "total": {
       "type": "decimal",
@@ -31,39 +36,8 @@
     },
     "status": {
       "type": "enumeration",
-      "enum": ["pending", "paid", "shipped", "delivered", "cancelled"],
-      "default": "pending"
-    },
-    "paymentMethod": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::payment-method.payment-method"
-    },
-    "shippingMethod": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::shipping-method.shipping-method"
-    },
-    "shippingAddress": {
-      "type": "text",
-      "required": true
-    },
-    "paymentStatus": {
-      "type": "enumeration",
-      "enum": ["pending", "success", "failed"],
-      "default": "pending"
-    },
-    "comment": {
-      "type": "text"
-    },
-    "estimatedDeliveryDate": {
-      "type": "date"
-    },
-    "createdAt": {
-      "type": "datetime"
-    },
-    "updatedAt": {
-      "type": "datetime"
+      "enum": ["Pending", "Paid", "Shipped", "Cancelled"],
+      "default": "Pending"
     }
   }
 }

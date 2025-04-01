@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "payment-methods",
+  "collectionName": "payment_methods",
   "info": {
     "singularName": "payment-method",
     "pluralName": "payment-methods",
-    "displayName": "Payment Method",
-    "description": "Способы оплаты"
+    "displayName": "Payment Method"
   },
   "options": {
     "draftAndPublish": true
@@ -15,15 +14,10 @@
       "type": "string",
       "required": true
     },
-    "code": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
     "description": {
       "type": "text"
     },
-    "isActive": {
+    "active": {
       "type": "boolean",
       "default": true
     }

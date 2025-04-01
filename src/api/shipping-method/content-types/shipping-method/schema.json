@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "shipping-methods",
+  "collectionName": "shipping_methods",
   "info": {
     "singularName": "shipping-method",
     "pluralName": "shipping-methods",
-    "displayName": "Shipping Method",
-    "description": "Способы доставки"
+    "displayName": "Shipping Method"
   },
   "options": {
     "draftAndPublish": true
@@ -15,24 +14,11 @@
       "type": "string",
       "required": true
     },
-    "code": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
-    "description": {
-      "type": "text"
-    },
-    "cost": {
+    "price": {
       "type": "decimal",
-      "required": true,
-      "default": 0
+      "required": true
     },
-    "isActive": {
-      "type": "boolean",
-      "default": true
-    },
-    "estimatedDeliveryTime": {
+    "delivery_time": {
       "type": "string"
     }
   }
