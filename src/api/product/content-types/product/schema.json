@@ -69,6 +69,10 @@
     },
     "sku": {
       "type": "uid"
+    },
+    "PartnerPrice": {
+      "type": "decimal",
+      "required": true
     }
   }
 }

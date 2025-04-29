@@ -767,6 +767,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     mainImage: Schema.Attribute.Media & Schema.Attribute.Required;
+    PartnerPrice: Schema.Attribute.Decimal & Schema.Attribute.Required;
     price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
