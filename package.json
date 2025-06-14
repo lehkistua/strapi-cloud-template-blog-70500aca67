@@ -15,7 +15,7 @@
     "@strapi/plugin-cloud": "5.11.0",
     "@strapi/plugin-users-permissions": "5.11.0",
     "@strapi/strapi": "5.11.0",
-    "axios": "^1.8.4",
+    "axios": "^1.10.0",
     "better-sqlite3": "11.3.0",
     "csv-parser": "^3.2.0",
     "dotenv": "^16.4.7",
@@ -30,5 +30,16 @@
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
+  },
+  "resolutions": {
+    "axios": "1.10.0"
+  },
+  "overrides": {
+    "@strapi/admin": {
+      "axios": "1.10.0"
+    },
+    "@strapi/cloud-cli": {
+      "axios": "1.10.0"
+    }
   }
 }
